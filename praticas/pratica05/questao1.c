@@ -1,15 +1,23 @@
 #include<stdio.h>
 int main(){
-int numero;
+float valor_bruto;
+  float valor_desconto;
 
-  printf("Entre com um número inteiro");
-  int deu_certo = scanf("%i", &numero);
+  printf("Entre com o valor bruto");
+  int leu_certo = scanf("%f", &valor_bruto);
 
-  if(numero % 2 == 0){
-    printf("O número %i eh par!\n", numero);
-  } else{
-    printf("O numero %i eh impar!\n", numero);
+  if(valor_bruto <= 100.0f ) {
+    valor_desconto = valor_bruto * 0.01f;
+  }else if(valor_bruto <= 500.0f) {
+    valor_desconto = valor_bruto * 0.05f;
+  } else {
+    valor_desconto = valor_bruto * 0.1f;
   }
+
+  printf("O valor do desconto eh %.2f\n", valor_desconto);
+
+  
+  
   
   return 0;
 }
